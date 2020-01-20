@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="student" class="com.lti.model.Student" scope="singleton"
+		autowire="byName" init-method="init" destroy-method="delete">
+		<property name="rollNumber" value="1" />
+		<property name="studentName" value="Pooja" />
+		<property name="studentScore" value="83" />
+		<!-- <property name="address" ref="address" /> -->
+	</bean>
+
+	<bean id="address" class="com.lti.model.Address" scope="singleton">
+		<property name="addressId" value="1" />
+		<property name="city" value="mumbai" />
+		<property name="pin" value="400040" />
+	</bean>
+</beans>
